@@ -1,33 +1,21 @@
 
 // Name : Chinmoy Das
 // Date : 10/03/2024
-// Problem : Intersection-of-two-arrays
+// Problem : Remove-all-duplicates-from-a-given-string
 // Difficulty level : Easy
-// Problem Link : https://leetcode.com/problems/intersection-of-two-arrays/
-
-import java.util.*;
+// Problem Link : https://www.geeksforgeeks.org/problems/remove-all-duplicates-from-a-given-string4321/1
 
 class Solution {
-    public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> set = new HashSet<>();
-        for (int e : nums1) {
-            set.add(e);
+    String removeDuplicates(String str) {
+        String s1="";
+        for(int i=0;i<str.length();i++)
+        {
+            if(s1.contains(String.valueOf(str.charAt(i)))==true)
+            continue;
+            else
+            s1+=str.charAt(i);
         }
-
-        Set<Integer> set2 = new HashSet<>();
-        for (int e : nums2) {
-            set2.add(e);
-        }
-
-        set.retainAll(set2);
-        int ans[] = new int[set.size()];
-        int index = 0;
-        for (int e : set) {
-            ans[index] = e;
-            index++;
-        }
-        return ans;
+        return s1;
     }
 }
-
 // Thankyou❤️‍🩹
