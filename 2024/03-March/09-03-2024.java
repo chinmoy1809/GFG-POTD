@@ -1,24 +1,30 @@
 
 // Name : Chinmoy Das
 // Date : 09/03/2024
-// Problem : Minimum-common-value
-// Difficulty level : Easy
-// Problem Link : https://leetcode.com/problems/minimum-common-value/
+// Problem : Find-the-n-th-character
+// Difficulty level : medium
+// Problem Link : https://www.geeksforgeeks.org/problems/find-the-n-th-character5925/1
 
-import java.util.*;
 class Solution {
-    public int getCommon(int[] nums1, int[] nums2) {
-        HashMap<Integer, Integer> mp = new HashMap<>();
-        for (int num : nums1) {
-            mp.put(num, mp.getOrDefault(num, 0) + 1);
-        }
-        for (int num : nums2) {
-            if (mp.containsKey(num) && mp.get(num) > 0) {
-                return num;
+    public char nthCharacter(String s, int r, int n) {
+        // code here
+        String tempString = "";
+
+        while (r > 0) {
+            tempString = "";
+            for (int i = 0; i <= n; i++) {
+
+                if (s.charAt(i) == '0') {
+                    tempString += "01";
+                } else {
+                    tempString += "10";
+                }
             }
+            s = tempString;
+            r--;
         }
-        return -1;
+
+        return s.charAt(n);
     }
 }
-
 // Thankyou❤️‍🩹
